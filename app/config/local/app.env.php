@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://asana-teacher-api',
+	'url' => 'http://asanateacher-globaldevelopers.rhcloud.com',
 
 	/*
 	|--------------------------------------------------------------------------

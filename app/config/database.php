@@ -55,11 +55,11 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
+			'database'  => 'asana_teacher',
+			'username'  => 'root',
 			'password'  => '',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
+			'charset'   => 'latin1',
+			'collation' => 'latin1_spanish_ci',
 			'prefix'    => '',
 		),
 
