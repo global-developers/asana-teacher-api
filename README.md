@@ -1,2 +1,1 @@
-# asana-teacher-api
-Web Service RESful API
+# Asana Teacher API
