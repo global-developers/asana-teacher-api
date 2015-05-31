@@ -35,13 +35,10 @@ class JsonFileLoader extends ArrayLoader implements LoaderInterface
             throw new NotFoundResourceException(sprintf('File "%s" not found.', $resource));
         }
 
-        $messages = array();
-        if ($data = file_get_contents($resource)) {
-            $messages = json_decode($data, true);
+        $messages = json_decode(file_get_contents($resource), true);
 
-            if (0 < $errorCode = json_last_error()) {
-                throw new InvalidResourceException(sprintf('Error parsing JSON - %s', $this->getJSONErrorMessage($errorCode)));
-            }
+        if (0 < $errorCode = json_last_error()) {
+            throw new InvalidResourceException(sprintf('Error parsing JSON - %s', $this->getJSONErrorMessage($errorCode)));
         }
 
         if (null === $messages) {

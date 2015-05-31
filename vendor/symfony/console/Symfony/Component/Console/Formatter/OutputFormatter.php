@@ -142,7 +142,6 @@ class OutputFormatter implements OutputFormatterInterface
      */
     public function format($message)
     {
-        $message = (string) $message;
         $offset = 0;
         $output = '';
         $tagRegex = '[a-z][a-z0-9_=;-]*';
@@ -150,10 +149,6 @@ class OutputFormatter implements OutputFormatterInterface
         foreach ($matches[0] as $i => $match) {
             $pos = $match[1];
             $text = $match[0];
-
-            if (0 != $pos && '\\' == $message[$pos - 1]) {
-                continue;
-            }
 
             // add the text up to the next tag
             $output .= $this->applyCurrentStyle(substr($message, $offset, $pos - $offset));
@@ -169,6 +164,9 @@ class OutputFormatter implements OutputFormatterInterface
             if (!$open && !$tag) {
                 // </>
                 $this->styleStack->pop();
+            } elseif ($pos && '\\' == $message[$pos - 1]) {
+                // escaped tag
+                $output .= $this->applyCurrentStyle($text);
             } elseif (false === $style = $this->createStyleFromString(strtolower($tag))) {
                 $output .= $this->applyCurrentStyle($text);
             } elseif ($open) {
