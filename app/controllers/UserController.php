@@ -1,6 +1,7 @@
 <?php
 
 use AsanaTeacher\Managers\RegisterManager;
+use AsanaTeacher\Managers\ManagerValidationException;
 use AsanaTeacher\Repositories\UserRepo;
 
 class UserController extends \BaseController {
@@ -35,6 +36,7 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
+
 		$userRepo = new UserRepo();
 
 		$manager = new RegisterManager($userRepo->newUser(), Input::all());
@@ -43,7 +45,7 @@ class UserController extends \BaseController {
         
         $manager->save();
 
-        return Redirect::to('/user');
+        return $this->index();
 	}
 
 	/**
@@ -58,7 +60,7 @@ class UserController extends \BaseController {
 		$user = User::find($id);
 
 		if($user == NULL) {
-			App::abort(404, "NotFoundUserID($id)");
+			throw new ManagerValidationException("NotFoundUserID($id)", NULL);
 		}
 
 		return $user;
@@ -89,7 +91,11 @@ class UserController extends \BaseController {
 
 		$manager = new RegisterManager($userRepo->find($id), Input::all());
 
-		return $manager->update();
+		unset($userRepo);
+
+		$manager->update();
+
+		return $this->index();
 	}
 
 	/**
@@ -101,15 +107,15 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$user = User::find($id);
+		$userRepo = new UserRepo();
 
-		if($user == NULL) {
-			App::abort(404, "NotFoundUserID($id)");
-		}
+		$manager = new RegisterManager($userRepo->find($id), []);
 
-		$user->delete();
+		unset($userRepo);
 
-		return ['success'];
+		$manager->delete();
+
+		return $this->index();
 	}
 
 }
