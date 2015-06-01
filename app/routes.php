@@ -13,5 +13,16 @@
 
 Route::get('/', function() use($app)
 {
+
+	return User::withAll();
+
 	return View::make('hello');
 });
+
+/*
+|--------------------------------------------------------------------------
+| USERS RESTful RESOURCE CONTROLLER
+|--------------------------------------------------------------------------
+ */
+
+Route::resource('user', 'UserController');

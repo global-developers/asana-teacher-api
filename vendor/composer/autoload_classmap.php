@@ -6,6 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AsanaTeacher\\Managers\\BaseManager' => $baseDir . '/app/AsanaTeacher/Managers/BaseManager.php',
+    'AsanaTeacher\\Managers\\ManagerValidationException' => $baseDir . '/app/AsanaTeacher/Managers/ManagerValidationException.php',
+    'AsanaTeacher\\Managers\\RegisterManager' => $baseDir . '/app/AsanaTeacher/Managers/RegisterManager.php',
+    'AsanaTeacher\\Repositories\\UserRepo' => $baseDir . '/app/AsanaTeacher/Repositories/UserRepo.php',
     'Barryvdh\\Debugbar\\Console\\ClearCommand' => $vendorDir . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
     'Barryvdh\\Debugbar\\Console\\PublishCommand' => $vendorDir . '/barryvdh/laravel-debugbar/src/Console/PublishCommand.php',
     'Barryvdh\\Debugbar\\Controllers\\AssetController' => $vendorDir . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',
@@ -48,6 +52,8 @@ return array(
     'Boris\\ReadlineClient' => $vendorDir . '/d11wtq/boris/lib/Boris/ReadlineClient.php',
     'Boris\\ShallowParser' => $vendorDir . '/d11wtq/boris/lib/Boris/ShallowParser.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
+    'CategoriesTableSeeder' => $baseDir . '/app/database/seeds/CategoriesTableSeeder.php',
+    'Category' => $baseDir . '/app/models/Category.php',
     'ClassPreloader\\Application' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Application.php',
     'ClassPreloader\\ClassList' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/ClassList.php',
     'ClassPreloader\\ClassLoader' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/ClassLoader.php',
@@ -58,6 +64,8 @@ return array(
     'ClassPreloader\\Parser\\DirVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/DirVisitor.php',
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
+    'CreateCategoriesTable' => $baseDir . '/app/database/migrations/2015_05_31_183308_create_categories_table.php',
+    'CreateUsersTable' => $baseDir . '/app/database/migrations/2015_05_31_192945_create_users_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',
@@ -1991,6 +1999,8 @@ return array(
     'System_SSH_Agent_Identity' => $vendorDir . '/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
     'User' => $baseDir . '/app/models/User.php',
+    'UserController' => $baseDir . '/app/controllers/UserController.php',
+    'UsersTableSeeder' => $baseDir . '/app/database/seeds/UsersTableSeeder.php',
     'Way\\Generators\\Commands\\ControllerGeneratorCommand' => $vendorDir . '/way/generators/src/Way/Generators/Commands/ControllerGeneratorCommand.php',
     'Way\\Generators\\Commands\\GeneratorCommand' => $vendorDir . '/way/generators/src/Way/Generators/Commands/GeneratorCommand.php',
     'Way\\Generators\\Commands\\MigrationGeneratorCommand' => $vendorDir . '/way/generators/src/Way/Generators/Commands/MigrationGeneratorCommand.php',

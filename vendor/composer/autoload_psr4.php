@@ -12,4 +12,5 @@ return array(
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
+    'AsanaTeacher\\' => array($baseDir . '/app/AsanaTeacher'),
 );
