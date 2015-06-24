@@ -3,8 +3,15 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/CristianJaramillo/field"
+        }
+    ],
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"cristianjaramillo/field": "dev-master"
 	},
 	"require-dev": {
 		"barryvdh/laravel-debugbar": "~1.7",
@@ -22,7 +29,10 @@
 		],
 		"psr-4": {
 			"AsanaTeacher\\": "app/AsanaTeacher"
-		}
+		},
+		"files":[
+			"app/start/helpers.php"
+		]
 	},
 	"scripts": {
 		"post-install-cmd": [

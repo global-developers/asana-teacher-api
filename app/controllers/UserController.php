@@ -1,10 +1,15 @@
 <?php
 
-use AsanaTeacher\Managers\RegisterManager;
-use AsanaTeacher\Managers\ManagerValidationException;
+use AsanaTeacher\Managers\UserRegisterManager;
 use AsanaTeacher\Repositories\UserRepo;
 
 class UserController extends \BaseController {
+
+	private $repository;
+
+	public function __construct(UserRepo $repository) {
+		$this->repository = $repository;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +19,7 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		return User::withAll();
+		return $this->repository->all();
 	}
 
 	/**
@@ -23,9 +28,8 @@ class UserController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
-	{
-		return Input::all();
+	public function create() {
+		return Redirect::route('sign-up');
 	}
 
 	/**
@@ -36,14 +40,12 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-
-		$userRepo = new UserRepo();
-
-		$manager = new RegisterManager($userRepo->newUser(), Input::all());
-        
-        unset($userRepo);
+		$manager = new UserRegisterManager($this->repository->newUser(), Input::all());
         
         $manager->save();
+
+        if(!Request::ajax())
+        	return Redirect::route('login');
 
         return $this->index();
 	}
@@ -57,11 +59,10 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$user = User::find($id);
+		$user = $this->repository->find($id);
 
-		if($user == NULL) {
-			throw new ManagerValidationException("NotFoundUserID($id)", NULL);
-		}
+		if($user == NULL)
+			throw new \Exception("NotFoundUserID($id)");
 
 		return $user;
 	}
@@ -75,24 +76,54 @@ class UserController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return Input::all();
+		return Redirect::to('/');
+	}
+
+	/**
+	 *
+	 * @param int id
+	 * @return Response
+	 */
+	public function photo($id)
+	{
+		$user = $this->repository->find($id);
+
+		$file = $user->photo;
+
+		$path = str_replace("/", "\\", storage_path("users/" . $file));
+
+		if (!\File::exists($path))
+		{
+			return "No existe {$path} ";
+		}
+
+		$file_content = file_get_contents($path);
+
+		$headers = array(
+			//"Accept-Ranges", "bytes",
+			//"Cache-Control" => "max-age=".(60*60),
+			//"Content-Transfer-Encoding" => "chunked",
+			"Content-Type" => "image/png",
+			//"Content-length", filesize($path),
+			//"Content-Disposition", " inline; filename=\"{$file}\"",
+			//"Expires" => gmdate("D, d M Y H:i:s", time() + (60*60)) . " GMT",
+			//"X-Pad" => "avoid browser bug",
+		);
+
+		return Response::make($file_content, 200, $headers);
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 * PUT /user/{id}
 	 *
-	 * @param  int  $id
+	 * @param  int
 	 * @return Response
 	 */
 	public function update($id)
 	{
-		$userRepo = new UserRepo();
-
-		$manager = new RegisterManager($userRepo->find($id), Input::all());
-
-		unset($userRepo);
-
+		$manager = new UserRegisterManager($this->repository->find($id), Input::all());
+		
 		$manager->update();
 
 		return $this->index();
@@ -107,12 +138,8 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$userRepo = new UserRepo();
-
-		$manager = new RegisterManager($userRepo->find($id), []);
-
-		unset($userRepo);
-
+		$manager = new UserRegisterManager($this->repository->find($id), []);
+		
 		$manager->delete();
 
 		return $this->index();

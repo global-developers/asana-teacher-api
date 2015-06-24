@@ -43,11 +43,21 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::route('login');
 		}
 	}
 });
 
+Route::filter('auth.ajax', function($route, $request){
+	if (!Request::ajax())
+	{
+		if(Request::isMethod('get'))
+		{
+			return Redirect::to(preg_replace("/\//", "/#", $request->getPathInfo(), 1));
+		}
+	    return App::abort(403);
+	} 
+});
 
 Route::filter('auth.basic', function()
 {
@@ -67,7 +77,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check()) return Redirect::route('dashboard');
 });
 
 /*
@@ -88,3 +98,24 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+ |--------------------------------------------------------------------------
+ | Access Authorization to App
+ |--------------------------------------------------------------------------
+ */
+// Route::filter('auth.api', 'AuthorizedFilter@api');
+
+/*
+ |--------------------------------------------------------------------------
+ | Access Authorization to Page
+ |--------------------------------------------------------------------------
+ */
+// Route::filter('auth.page', 'AuthorizedFilter');
+
+/*
+ |--------------------------------------------------------------------------
+ | Access Authorization to Resources
+ |--------------------------------------------------------------------------
+ */
+// Route::filter('auth.resource', 'AuthorizedFilter@resource');

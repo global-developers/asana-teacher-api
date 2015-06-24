@@ -121,6 +121,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		// Laravel Field
+		'CristianJaramillo\Field\ServiceProvider',
 		// Laravel 4 Debugbar
 		'Barryvdh\Debugbar\ServiceProvider',
 		// Fast Workflow in Laravel With Custom Generators
@@ -192,7 +194,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
+		// Laravel Field
+		'Field'			  => 'CristianJaramillo\Field\Facade',		
 	),
 
 );

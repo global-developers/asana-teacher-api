@@ -11,6 +11,7 @@ return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
+    'CristianJaramillo\\Field\\' => array($vendorDir . '/cristianjaramillo/field/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'AsanaTeacher\\' => array($baseDir . '/app/AsanaTeacher'),
 );

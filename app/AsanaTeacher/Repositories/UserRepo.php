@@ -1,29 +1,28 @@
 <?php namespace AsanaTeacher\Repositories;
 
+use AsanaTeacher\Entity\User;
+
 class UserRepo extends BaseRepo {
 
 	/**
-	 * @return \User
+	 * @return AsanaTeacher\Entity\User
 	 */
-	public function getEntitie()
-	{
-		return new \User;
+	public function getEntity() {
+		return new User;
 	}
 
 	/**
 	 * @return
 	 */
-	public function withAll()
-	{
-		return $this->entitie->withAll();
+	public function withAll() {
+		return $this->entity->withAll();
 	}
 
 	/**
-	 * @return \User
+	 * @return AsanaTeacher\Entity\User
 	 */
-	public function newUser()
-	{
-		$user = new \User();
+	public function newUser() {
+		$user = new User();
 		$user->category_id = 2;
 		return $user;
 	}

@@ -1,5 +1,7 @@
 <?php
 
+use AsanaTeacher\Entity\Category;
+
 class CategoriesTableSeeder extends Seeder {
 
 	public function run()
@@ -16,8 +18,7 @@ class CategoriesTableSeeder extends Seeder {
 				),
 			);
 
-		foreach ($categories as $category)
-		{
+		foreach ($categories as $category) {
 			Category::create($category);
 		}
 	}

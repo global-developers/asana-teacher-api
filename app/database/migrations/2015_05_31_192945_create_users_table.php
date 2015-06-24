@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->string('full_name');
-			$table->string('username');
+			$table->string('photo')->default('default.png');
+			$table->string('username')->default('XXXXXXXXXX');
 			$table->string('email', 320)->unique();
 			$table->string('password');			
 			$table->integer('category_id')->unsigned();
@@ -34,8 +35,7 @@ class CreateUsersTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
+	public function down() {
 		Schema::dropIfExists('users');;
 	}
 

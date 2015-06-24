@@ -5,48 +5,44 @@ abstract class BaseRepo {
 	/**
 	 * @var object
 	 */
-	protected $entitie;
+	protected $entity;
 
 	
 	/**
 	 * @return void
 	 */
-	public function __construct()
-    {
-        $this->entitie = $this->getEntitie();
+	public function __construct() {
+        $this->entity = $this->getEntity();
     }
     
     /**
-     * @return 
+     * @return \Eloquent
      */
-    abstract public function getEntitie();
+    abstract public function getEntity();
 
     /**
      * @return
      */
-    public function all()
-    {
-        return $this->entitie->all();
+    public function all() {
+        return $this->entity->all();
     }
 
     /**
-     * @param
+     * @param int
      * @return
      */
-    public function find($id)
-    {
-        return $this->entitie->find($id);
+    public function find($id) {
+        return $this->entity->find($id);
     }
 
     /**
-     * @param
-     * @param
-     * @param
+     * @param string
+     * @param string
+     * @param string
      * @return
      */
-    public function where($key, $exp = '=', $value)
-    {
-        return $this->entitie->where($key, $exp, $value)->first();
+    public function where($key, $exp = '=', $value) {
+        return $this->entity->where($key, $exp, $value)->first();
     }
 
 }

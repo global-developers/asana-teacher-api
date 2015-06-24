@@ -13,8 +13,7 @@ class ManagerValidationException extends \Exception
      * @param array $errors
      * @return void
      */
-    public function __construct($message, $errors)
-    {
+    public function __construct($message, $errors) {
         $this->errors = $errors;
         parent::__construct($message);
     }
@@ -22,8 +21,7 @@ class ManagerValidationException extends \Exception
     /**
      * @return array
      */
-    public function getErrors()
-    {
+    public function getErrors() {
         return $this->errors;
     }
 
