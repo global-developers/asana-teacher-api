@@ -9,25 +9,36 @@ class NavigationAppsTableSeeder extends Seeder {
 
 		$navigationApps = array(
 				array(
-					"app_id"    => 4,
-					"title" => "Home",
-					"url"   => "app/dashboard",
-					"icon"  => "fa-home",
+					"app_id" => 4,
+					"title"  => "Inicio",
+					"url"    => "app/profile",
+					"icon"   => "fa-home",
 				),
 				array(
-					"app_id"    => 5,
-					"title" => "Test",
-					"url"   => "app/test",
-					"icon"  => "fa-bomb",
-					"parent" => "default"
+					"app_id" => 5,
+					"title"  => "Administrar",
+					"url"    => "app/dashboard",
 				),
 				array(
-					"app_id"    => 6,
-					"title" => "UPICSA",
-					"url"   => "app/upiicsa",
-					"icon"  => "fa-automobile",
-					"parent" => "default"
-				)
+					"app_id" => 6,
+					"title"  => "Dashboard",
+					"url"    => "app/admin/dashboard",
+					"icon"   => "fa-dashboard",
+					"parent" => "administrar"
+				),
+				array(
+					"app_id" => 7,
+					"title"  => "Usuarios",
+					"url"    => "app/admin/users",
+					"icon"   => "fa-group",
+					"parent" => "administrar"
+				),
+				array(
+					"app_id" => 7,
+					"title"  => "Calendario",
+					"url"    => "app/calendar",
+					"icon"   => "fa-calendar"
+				),
 			);
 
 		foreach($navigationApps as $navigationApp)

@@ -30,4 +30,28 @@ class GroupCollection extends \Eloquent {
 	 */
 	protected $hidden = ['created_at', 'updated_at'];
 	
+	/**
+     * @return
+     */
+    public function group()
+    {
+    	return $this->hasOne('AsanaTeacher\Entity\Group', 'id', 'group_id');
+    }
+
+	/**
+     * @return
+     */
+    public function teacher()
+    {
+    	return $this->hasOne('AsanaTeacher\Entity\User', 'id', 'teacher_id');
+    }
+
+    /**
+     * @return
+     */
+    public function course()
+    {
+    	return $this->hasOne('AsanaTeacher\Entity\Course', 'id', 'course_id');
+    }
+
 }

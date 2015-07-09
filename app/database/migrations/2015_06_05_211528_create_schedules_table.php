@@ -16,7 +16,7 @@ class CreateSchedulesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('group_collection_id');
-			$table->enum('day', ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']);
+			$table->enum('day', [1, 2, 3, 4, 5, 6, 7]);
 			$table->string('building');
 			$table->string('classroom');
 			$table->time('from');

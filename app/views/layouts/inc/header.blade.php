@@ -57,18 +57,18 @@
 					<div id="logo-group">
 
 						<!-- PLACE YOUR LOGO HERE -->
-						<span id="logo"> <img src="{{ asset('img/logo.png') }}" alt="SmartAdmin"> </span>
+						<span id="logo"> <img src="{{ asset('img/logo-white.png') }}" alt="SmartAdmin"> </span>
 						<!-- END LOGO PLACEHOLDER -->
 
 						<!-- Note: The activity badge color changes when clicked and resets the number to 0
 						Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-						<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+						<!--span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span-->
 
 						<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-						<div class="ajax-dropdown">
+						<!--div class="ajax-dropdown"-->
 
 							<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-							<div class="btn-group btn-group-justified" data-toggle="buttons">
+							<!--div class="btn-group btn-group-justified" data-toggle="buttons">
 								<label class="btn btn-default">
 									<input type="radio" name="activity" id="{{ asset('ajax/notify/mail.php') }}">
 									Msgs (14) </label>
@@ -78,10 +78,10 @@
 								<label class="btn btn-default">
 									<input type="radio" name="activity" id="{{ asset('ajax/notify/tasks.php') }}">
 									Tasks (4) </label>
-							</div>
+							</div-->
 
 							<!-- notification content -->
-							<div class="ajax-notifications custom-scroll">
+							<!--div class="ajax-notifications custom-scroll">
 
 								<div class="alert alert-transparent">
 									<h4>Click a button to show messages here</h4>
@@ -90,22 +90,22 @@
 
 								<i class="fa fa-lock fa-4x fa-border"></i>
 
-							</div>
+							</div-->
 							<!-- end notification content -->
 
 							<!-- footer: refresh area -->
-							<span> Last updated on: 12/12/2013 9:43AM
+							<!--span> Last updated on: 12/12/2013 9:43AM
 								<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
 									<i class="fa fa-refresh"></i>
-								</button> </span>
+								</button> </span-->
 							<!-- end footer -->
 
-						</div>
+						<!--/div-->
 						<!-- END AJAX-DROPDOWN -->
 					</div>
 
 					<!-- projects dropdown -->
-					<div class="project-context hidden-xs">
+					<!--div class="project-context hidden-xs">
 
 						<span class="label">Projects:</span>
 						<span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
@@ -128,7 +128,7 @@
 						</ul>
 						<!-- end dropdown-menu-->
 
-					</div>
+					</div-->
 					<!-- end projects dropdown -->
 
 					<!-- pulled right: nav area -->
@@ -165,7 +165,7 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="{{ route('logout') }}" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+										<a href="{{ route('logout') }}" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>S</u>alir</strong></a>
 									</li>
 								</ul>
 							</li>
@@ -173,7 +173,7 @@
 
 						<!-- logout button -->
 						<div id="logout" class="btn-header transparent pull-right">
-							<span> <a href="{{ route('logout') }}" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+							<span> <a href="{{ route('logout') }}" title="Sign Out" data-action="userLogout" data-logout-msg="Usted puede mejorar su seguridad aún más después de cerrar la sesión, cierre este navegador"><i class="fa fa-sign-out"></i></a> </span>
 						</div>
 						<!-- end logout button -->
 
@@ -200,7 +200,7 @@
 						<!-- end fullscreen button -->
 
 						<!-- #Voice Command: Start Speech -->
-						<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
+						<!--div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
 							<div> 
 								<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
 								<div class="popover bottom"><div class="arrow"></div>
@@ -216,12 +216,12 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div-->
 						<!-- end voice command -->
 
 						<!-- multiple lang dropdown : find all flags in the flags page -->
 											
-						<ul class="header-dropdown-list hidden-xs">
+						<!--ul class="header-dropdown-list hidden-xs">
 							<li>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
 									<img src="{{ asset('img/blank.gif') }}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
@@ -258,7 +258,7 @@
 									</li>						
 								</ul>
 							</li>
-						</ul>
+						</ul-->
 						
 						<!-- end multiple lang -->
 

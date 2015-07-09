@@ -15,10 +15,11 @@
 			<div class="hero">
 
 				<div class="pull-left login-desc-box-l">
-				<h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of {{ Lang::get('app.name') }}, everywhere you go!</h4>
+					<h4 class="paragraph-header">
+						
+					</h4>
 				<div class="login-app-icons">
-				<a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
-				<a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
+				<a href="javascript:void(0);" class="btn btn-danger btn-sm">Registro</a>
 				</div>
 				</div>
 
@@ -28,15 +29,16 @@
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<h5 class="about-heading">About {{ Lang::get('app.name') }} - Are you up to date?</h5>
+					<h5 class="about-heading">Sobre {{ Lang::get('app.name') }}</h5>
 					<p>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+						La idea del proyecto surge a raíz de observar la comunicación entre los profesores y alumnos la cual llega a ser mínima e incluso nula.
+						Claro ejemplo de ello está presente previo al inicio del semestre los alumnos desconocen a sus futuros profesores tanto físicamente como en el ámbito profesional
 					</p>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<h5 class="about-heading">Not just your average template!</h5>
+					<h5 class="about-heading">Que encontraras!</h5>
 					<p>
-						Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
+						¿Grado académico?, ¿Donde a trabajado?, ¿Por cuánto tiempo?, ¿Que materias a impartido?, etc. Estos son solo algunos de los pocos problemas de comunicación de profesores hacia sus futuros estudiantes.
 					</p>
 				</div>
 			</div>

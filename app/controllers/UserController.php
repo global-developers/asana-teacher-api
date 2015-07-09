@@ -19,7 +19,7 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		return $this->repository->all();
+		return array("data" => $this->repository->withAll());
 	}
 
 	/**
@@ -103,7 +103,7 @@ class UserController extends \BaseController {
 			//"Accept-Ranges", "bytes",
 			//"Cache-Control" => "max-age=".(60*60),
 			//"Content-Transfer-Encoding" => "chunked",
-			"Content-Type" => "image/png",
+			"Content-Type" => mime_content_type($path),
 			//"Content-length", filesize($path),
 			//"Content-Disposition", " inline; filename=\"{$file}\"",
 			//"Expires" => gmdate("D, d M Y H:i:s", time() + (60*60)) . " GMT",

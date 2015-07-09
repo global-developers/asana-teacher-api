@@ -17,9 +17,6 @@ class GroupsTableSeeder extends Seeder {
 				'name' => '1CM30'
 			),
 			array(
-				'name' => '2CM22'
-			),
-			array(
 				'name' => '2CM32'
 			),
 			array(

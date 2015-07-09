@@ -14,4 +14,5 @@ return array(
     $vendorDir . '/barryvdh/laravel-debugbar/src/helpers.php',
     $vendorDir . '/cristianjaramillo/field/src/helpers.php',
     $baseDir . '/app/start/helpers.php',
+    $baseDir . '/app/Linfo/helpers.php',
 );

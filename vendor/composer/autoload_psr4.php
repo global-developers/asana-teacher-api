@@ -10,6 +10,7 @@ return array(
     'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Linfo\\' => array($baseDir . '/app/Linfo'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'CristianJaramillo\\Field\\' => array($vendorDir . '/cristianjaramillo/field/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),

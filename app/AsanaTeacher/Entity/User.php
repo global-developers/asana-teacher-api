@@ -84,6 +84,14 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
     /**
      * @return
      */
+    public function joinGroupCollections()
+    {
+    	return $this->hasMany('AsanaTeacher\Entity\JoinGroupCollection', 'student_id', 'id');
+    }
+
+    /**
+     * @return
+     */
     public function scopeWithAll($query)
     {
     	return $query->with('category')->get();

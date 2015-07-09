@@ -75,15 +75,34 @@ Route::group(array('prefix' => 'api'), function(){
 
 /*
 |--------------------------------------------------------------------------
+| LInfo Proyect
+|--------------------------------------------------------------------------
+*/
+
+/*
+ | linfo/json/{name} route
+ */
+Route::get('linfo/json/{name}', ['as' => 'linfo-json', 'uses' => 'LinfoController@json']);
+
+/*
+ | linfo/widget/{name} route
+ */
+Route::get('linfo/widget/{name}', ['as' => 'linfo-widget', 'uses' => 'LinfoController@widget']);
+
+/*
+|--------------------------------------------------------------------------
 | VIEWS RESTFUL RESOURCE CONTROLLER
 |--------------------------------------------------------------------------
 */
-use AsanaTeacher\Entity\App;
-Route::get('app/{name}', function($name) {
 
-	$layout = App::where('name', $name)->lists('layout');
+Route::group(array('prefix' => 'app'), function() {
+	
+	Route::get('profile/{id?}', ['as' => 'app.profile', 'uses' => 'ProfileViewController@index']);
+	Route::get('calendar', ['as' => 'app.calendar', 'uses' => 'CalendarViewController@index']);
 
-	$layout = isset($layout[0]) ? $layout[0] : 'layouts.apps.default';
+	Route::group(array('prefix' => 'admin'), function() {
+		Route::get('users', ['as' => 'app.admin.users', 'uses' => 'UserViewController@index']);
+		Route::get('dashboard', ['as' => 'app.admin.dashboard', 'uses' => 'DashboardViewController@index']);
+	});
 
-	return View::make($layout);
 });

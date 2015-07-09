@@ -17,7 +17,7 @@ class CreateAppsTable extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->string('layout')->default('layouts.apps.default');
+			$table->string('layout')->default('layouts.apps.default')->nullable();
 			$table->string('description')->default('Description of this app.');
 			$table->timestamps();
 		});

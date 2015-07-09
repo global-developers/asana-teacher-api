@@ -52,4 +52,13 @@ class Group extends \Eloquent {
             $this->attributes['name'] = utf8_decode($value);
         }
     }
+
+    /**
+     * @return
+     */
+    public function groupCollections()
+    {
+    	return $this->hasMany('AsanaTeacher\Entity\GroupCollection', 'group_id', 'id');
+    }
+
 }

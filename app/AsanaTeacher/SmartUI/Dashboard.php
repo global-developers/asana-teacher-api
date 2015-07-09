@@ -178,7 +178,7 @@ class Dashboard
 			$item['name'] = $perm->navigationApp->app->name;
 			$item['title'] = $perm->navigationApp->title;
 
-			if (!is_null($perm->navigationApp->url))
+			if (!is_null($perm->navigationApp->url) && !is_null($perm->navigationApp->app->layout))
 				$item['url'] = $perm->navigationApp->url;
 			if (!is_null($perm->navigationApp->target))
 				$item['url_target'] = $perm->navigationApp->target;

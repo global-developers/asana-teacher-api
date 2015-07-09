@@ -23,17 +23,30 @@ class AppsTableSeeder extends Seeder {
 				'description' => 'Reset password of the application.'
 			),
 			array(
-				'name' => 'default',
-				'description' => 'Simple admin page.',
+				'name' => 'profile',
+				'layout' => 'layouts.apps.profile',
+				'description' => 'Profile page of this user.',
 			),
 			array(
-				'name' => 'default-two',
-				'description' => 'Simple admin page.',
+				'name' => 'administrar',
+				'layout' => null,
+				'description' => 'Item of admin.',
 			),
 			array(
-				'name' => 'default-three',
-				'description' => 'Simple admin page.',
-			)
+				'name' => 'dashboard',
+				'layout' => 'layouts.apps.admin.dashboard',
+				'description' => 'Dashboard of this server.',
+			),
+			array(
+				'name' => 'users',
+				'layout' => 'layouts.apps.admin.users',
+				'description' => 'User registers in this application.',
+			),
+			array(
+				'name' => 'calendar',
+				'layout' => 'layouts.apps.calendar',
+				'description' => 'Calendar of user.',
+			),
 		);
 
 		foreach ($apps as $app) {

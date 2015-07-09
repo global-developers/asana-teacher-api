@@ -50,6 +50,12 @@ class BaseController extends Controller {
 		unset($page);
 	}
 
+	protected function loadLayout($name)
+	{
+		$this->layout = App::where('name', $name)->lists('layout');
+		$this->layout = isset($this->layout[0]) ? $this->layout[0] : 'layouts.apps.default';
+	}
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
