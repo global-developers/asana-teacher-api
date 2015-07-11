@@ -23,6 +23,10 @@ class JoinGroupCollectionsTableSeeder extends Seeder {
 					'group_collection_id' => 3,
 					'student_id'          => 1,
 				),
+				array(
+					'group_collection_id' => 4,
+					'student_id'          => 1,
+				),
 			);
 
 		foreach($joinGroupCollections as $joinGroupCollection)

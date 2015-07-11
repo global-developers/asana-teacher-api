@@ -34,7 +34,7 @@ class NavigationAppsTableSeeder extends Seeder {
 					"parent" => "administrar"
 				),
 				array(
-					"app_id" => 7,
+					"app_id" => 8,
 					"title"  => "Calendario",
 					"url"    => "app/calendar",
 					"icon"   => "fa-calendar"

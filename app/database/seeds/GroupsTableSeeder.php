@@ -11,19 +11,19 @@ class GroupsTableSeeder extends Seeder {
 				'name' => '1CM20'
 			),
 			array(
-				'name' => '1CM22'
+				'name' => '1CM22' // ya
 			),
 			array(
 				'name' => '1CM30'
 			),
 			array(
-				'name' => '2CM32'
+				'name' => '2CM32' // ya
 			),
 			array(
-				'name' => '2CV32'
+				'name' => '2CV32' // ya
 			),
 			array(
-				'name' => '2CV40'
+				'name' => '2CV40' // ya
 			)
 		);
 

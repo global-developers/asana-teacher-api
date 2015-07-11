@@ -47,6 +47,30 @@ class SchedulesTableSeeder extends Seeder {
 				'from' => '19:00:00',
 				'to'   => '21:00:00'
 			),
+			array(
+				'group_collection_id' => 4,
+				'day' => 1,
+				'building' => 'Edificio de Ingenieria',
+				'classroom' => '114 - A',
+				'from' => '19:00:00',
+				'to'   => '21:00:00' 
+			),
+			array(
+				'group_collection_id' => 4,
+				'day' => 3,
+				'building' => 'Edificio de Ingenieria',
+				'classroom' => '105',
+				'from' => '19:00:00',
+				'to'   => '21:00:00' 
+			),
+			array(
+				'group_collection_id' => 4,
+				'day' => 5,
+				'building' => 'Edificio de Ingenieria',
+				'classroom' => '114 - A',
+				'from' => '19:00:00',
+				'to'   => '21:00:00' 
+			),
 		);
 
 		foreach($schedules as $schedule)

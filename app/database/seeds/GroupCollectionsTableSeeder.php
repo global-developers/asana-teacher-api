@@ -22,6 +22,11 @@ class GroupCollectionsTableSeeder extends Seeder {
 				'teacher_id' => 6,
 				'course_id'  => 5
 			),
+			array(
+				'group_id'   => 6,
+				'teacher_id' => 7,
+				'course_id'  => 6
+			),
 		);
 
 		foreach($groupCollections as $groupCollection)

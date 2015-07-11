@@ -21,10 +21,11 @@ class CalendarViewController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id = null)
 	{
 
-		$id = Auth::user()->id;
+		if (is_null($id))
+			$id = Auth::user()->id;
 
 		$user = User::where('id', $id)->with(
 			array(
@@ -67,9 +68,9 @@ class CalendarViewController extends \BaseController {
 
 				if ($nroDia > $schedule->day) 
 				{
-					$day = date("Y-m-d", strtotime("+" . $schedule->day - $nroDia . " day"));
+					$day = date("Y-m-d", strtotime($schedule->day - $nroDia . " day"));
 				} else if($nroDia < $schedule->day) {
-					$day = date("Y-m-d", strtotime("-" . $nroDia - $schedule->day. " day"));
+					$day = date("Y-m-d", strtotime("+" . $schedule->day - $nroDia. " day"));
 				}
 
 				$events[] = array(

@@ -98,7 +98,7 @@ Route::get('linfo/widget/{name}', ['as' => 'linfo-widget', 'uses' => 'LinfoContr
 Route::group(array('prefix' => 'app'), function() {
 	
 	Route::get('profile/{id?}', ['as' => 'app.profile', 'uses' => 'ProfileViewController@index']);
-	Route::get('calendar', ['as' => 'app.calendar', 'uses' => 'CalendarViewController@index']);
+	Route::get('calendar/{id?}', ['as' => 'app.calendar', 'uses' => 'CalendarViewController@index']);
 
 	Route::group(array('prefix' => 'admin'), function() {
 		Route::get('users', ['as' => 'app.admin.users', 'uses' => 'UserViewController@index']);

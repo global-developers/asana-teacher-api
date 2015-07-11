@@ -4,7 +4,7 @@
 		<!-- new widget -->
 		<div class="jarviswidget jarviswidget-color-blueDark">
 			<header>
-				<h2> Add Events </h2>
+				<h2> Agregar eventos </h2>
 			</header>
 
 			<!-- widget div-->
@@ -17,7 +17,7 @@
 						<fieldset>
 
 							<div class="form-group">
-								<label>Select Event Icon</label>
+								<label>Seleciona un icono</label>
 								<div class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons">
 									<label class="btn btn-default active">
 										<input type="radio" name="iconselect" id="icon-1" value="fa-info" checked>
@@ -41,17 +41,17 @@
 							</div>
 
 							<div class="form-group">
-								<label>Event Title</label>
+								<label>Titulo del eveno</label>
 								<input class="form-control"  id="title" name="title" maxlength="40" type="text" placeholder="Event Title">
 							</div>
 							<div class="form-group">
-								<label>Event Description</label>
+								<label>Descripción del evento</label>
 								<textarea class="form-control" placeholder="Please be brief" rows="3" maxlength="40" id="description"></textarea>
-								<p class="note">Maxlength is set to 40 characters</p>
+								<p class="note">Máximo 40 caracteres</p>
 							</div>
 
 							<div class="form-group">
-								<label>Select Event Color</label>
+								<label>Seleciona un color</label>
 								<div class="btn-group btn-group-justified btn-select-tick" data-toggle="buttons">
 									<label class="btn bg-color-darken active">
 										<input type="radio" name="priority" id="option1" value="bg-color-darken txt-color-white" checked>
@@ -79,7 +79,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<button class="btn btn-default" type="button" id="add-event" >
-										Add Event
+										Agregar evento
 									</button>
 								</div>
 							</div>
@@ -97,17 +97,11 @@
 		<div class="well well-sm" id="event-container">
 			<form>
 				<legend>
-					Draggable Events
+					Eventos sin asignar
 				</legend>
 				<ul id='external-events' class="list-unstyled">
 					<li>
 						<span class="bg-color-darken txt-color-white" data-description="Currently busy" data-icon="fa-time">Office Meeting</span>
-					</li>
-					<li>
-						<span class="bg-color-blue txt-color-white" data-description="No Description" data-icon="fa-pie">Lunch Break</span>
-					</li>
-					<li>
-						<span class="bg-color-red txt-color-white" data-description="Urgent Tasks" data-icon="fa-alert">URGENT</span>
 					</li>
 				</ul>
 				<div class="checkbox">
@@ -140,22 +134,22 @@
 			-->
 			<header>
 				<span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
-				<h2> My Events </h2>
+				<h2> Mi horario </h2>
 				<div class="widget-toolbar">
 					<!-- add: non-hidden - to disable auto hide -->
 					<div class="btn-group">
 						<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-							Showing <i class="fa fa-caret-down"></i>
+							Mostrar <i class="fa fa-caret-down"></i>
 						</button>
 						<ul class="dropdown-menu js-status-update pull-right">
 							<li>
-								<a href="javascript:void(0);" id="mt">Month</a>
+								<a href="javascript:void(0);" id="mt">Mensual</a>
 							</li>
 							<li>
 								<a href="javascript:void(0);" id="ag">Agenda</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" id="td">Today</a>
+								<a href="javascript:void(0);" id="td">Hoy</a>
 							</li>
 						</ul>
 					</div>
