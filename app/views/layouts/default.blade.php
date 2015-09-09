@@ -73,12 +73,12 @@
 		<!-- MAIN PANEL -->
 		<div id="main" role="main">
 			<!-- MAIN CONTENT -->
-				<div id="content" class="container">
-					<!-- APP -->
-					@yield('app')
-					<!-- END APP -->
-				</div>
+			<div id="content" class="container">
+				<!-- APP -->
+				@yield('app')
+				<!-- END APP -->
 			</div>
+		</div>
 		<!-- END MAIN PANEL -->
 
 		@section('footer')

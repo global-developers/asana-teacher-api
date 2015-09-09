@@ -16,6 +16,7 @@ class CreateSchedulesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('group_collection_id');
+			$table->foreign('group_collection_id')->references('id')->on('group_collections')->onDelete('cascade')->onUpdate('cascade');
 			$table->enum('day', [1, 2, 3, 4, 5, 6, 7]);
 			$table->string('building');
 			$table->string('classroom');

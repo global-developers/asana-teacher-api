@@ -57,7 +57,9 @@
 					<div id="logo-group">
 
 						<!-- PLACE YOUR LOGO HERE -->
-						<span id="logo"> <img src="{{ asset('img/logo-white.png') }}" alt="SmartAdmin"> </span>
+						<span id="logo"> 
+							<img src="{{ asset('img/logo-white.png') }}" alt="SmartAdmin"> 
+						</span>
 						<!-- END LOGO PLACEHOLDER -->
 
 						<!-- Note: The activity badge color changes when clicked and resets the number to 0
